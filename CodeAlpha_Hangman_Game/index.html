@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🎯 Hangman Game</h1>
+
+        <div id="status-banner" class="status-banner">
+            Playing
+        </div>
+
+        <div class="scoreboard">
+            <p>🏆 Wins: <span id="wins">0</span></p>
+            <p>❌ Losses: <span id="losses">0</span></p>
+        </div>
+
+        <div class="hangman-container">
+            <div class="hangman-drawing">
+                <div class="part head hidden"></div>
+                <div class="part body hidden"></div>
+                <div class="part left-arm hidden"></div>
+                <div class="part right-arm hidden"></div>
+                <div class="part left-leg hidden"></div>
+                <div class="part right-leg hidden"></div>
+            </div>
+        </div>
+
+        <div id="word-display" class="word-display">
+            _ _ _ _ _
+        </div>
+
+        <div class="info">
+            <p>Guessed Letters: <span id="guessed-letters"></span></p>
+            <p>Remaining Attempts: <span id="attempts">6</span></p>
+        </div>
+
+        <div class="input-section">
+            <input type="text" id="letter-input" maxlength="1" placeholder="Enter a letter">
+            <button id="guess-btn">Guess</button>
+        </div>
+
+        <button id="restart-btn" class="restart-btn">
+            Restart Game
+        </button>
+
+        <p id="message" class="message"></p>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
